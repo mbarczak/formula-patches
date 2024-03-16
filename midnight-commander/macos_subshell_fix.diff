@@ -1,0 +1,10 @@
+--- mc-4.8.31/src/subshell/common.c	2024-01-20 20:34:38
++++ mc-4.8.31_patched/src/subshell/common.c	2024-03-16 21:32:59
+@@ -846,6 +846,7 @@ feed_subshell (int how, gboolean fail_on_error)
+             if (subshell_state == RUNNING_COMMAND)
+             {
+                 subshell_state = INACTIVE;
++                usleep(200);
+                 return TRUE;
+             }
+         }
